@@ -16,7 +16,7 @@ export class AuthService {
   authSubject  =  new  BehaviorSubject(false);
 
   url : string = "https://api.openweathermap.org/data/2.5/weather?"
-  key: string = "1a1cb01ce868606e87e0c73a6b40d277"
+
   
   constructor( private httpClient: HttpClient, private storage: Storage) { }
 

@@ -14,6 +14,9 @@ export class AuthService {
   AUTH_SERVER_ADDRESS:  string  =  'http://localhost:3000';
   register_api: string = `${this.AUTH_SERVER_ADDRESS}/register`
   authSubject  =  new  BehaviorSubject(false);
+
+  url : string = "https://api.openweathermap.org/data/2.5/weather?"
+  key: string = "1a1cb01ce868606e87e0c73a6b40d277"
   
   constructor( private httpClient: HttpClient, private storage: Storage) { }
 
@@ -51,5 +54,13 @@ export class AuthService {
 
   isLoggedIn() {
     return this.authSubject.asObservable();
+  }
+
+  getWeatherByZipCodeCounty(city:string,country:string){
+    return this.httpClient.get<any>(`${this.url}q=${city},${country}&units=metric&appid=${this.key}`)
+  }
+
+  getWeatherByLonLat(lat:number,lon:number){
+    return this.httpClient.get<any>(`${this.url}lat=${lat}&lon=${lon}&units=metric&appid=${this.key}`)
   }
 }

@@ -1,11 +1,9 @@
 <ion-header translucent>
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-buttons slot="start">
         <ion-back-button defaultHref="" (click)="Back()"></ion-back-button>
-      </ion-buttons>
     </ion-buttons>
-    <ion-title>Create Account</ion-title>
+    <ion-title color="primary" class="ion-text-center">Create Account</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -13,8 +11,8 @@
   <form  #form="ngForm" (ngSubmit)="register(form)">
     <ion-grid>
       <ion-row justify-content-center>
-        <ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
-          <div class="ion-padding">
+        <ion-col align-self-center size-md="12" size-lg="5" size-xs="12">
+          <div>
             <ion-list lines="full" class="ion-no-margin ion-no-padding">
               <ion-item lines="full">
                 <ion-label position="floating"><ion-icon name="person-circle-outline"></ion-icon> Name <ion-text color="danger">*</ion-text></ion-label>

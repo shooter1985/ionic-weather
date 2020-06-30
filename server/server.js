@@ -1,3 +1,4 @@
+// this is the main file for the application
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors  = require('cors')
